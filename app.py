@@ -20,6 +20,7 @@ def get_data():
     return f'服务{service}访问成功了,返回结果是{res.text}'
 
 
+
 @app.route('/info')
 def info():
     with open('info.json', 'r') as f:
