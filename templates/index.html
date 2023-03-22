@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div>
+        <input type="button" value="A服务" onclick="btnSendDataA()">
+
+    </div>
+    <div>
+        <div>    </div>
+    </div>
+    <div>
+        <input type="button" value="B服务" onclick="btnSendDataB()">
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function btnSendDataA() {
+            var input = {
+                'name': 'tom',
+                'password': '123456'
+            };
+            $.ajax({
+                url: '/get_data?service=A',
+                type: 'get',
+                contentType: 'application/json',
+                success: function (res) {
+                    alert(res);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('请求出错了'+textStatus);
+                },
+            });
+        };
+
+        function btnSendDataB() {
+            var input = {
+                'name': 'tom',
+                'password': '123456'
+            };
+            $.ajax({
+                url: '/get_data?service=B',
+                type: 'get',
+                contentType: 'application/json',
+                success: function (res) {
+                    alert(res);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('请求出错了'+textStatus);
+                },
+            });
+        };
+        
+    </script>
+</body>
+</html>
